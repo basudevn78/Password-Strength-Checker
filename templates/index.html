@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Password Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Password-Strength Checker</h1>
+    <p>Analyze your password security in real-time</p>
+    
+    <form method="POST" action="/analyze">
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Enter your password to analyze" required />
+        <span class="eye-icon">&#128065;</span>
+      </div>
+      <div class="strength-bar">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+        <div class="bar" id="bar4"></div>
+      </div>
+      {% if result %}
+        <p class="result">{{ result }}</p>
+      {% endif %}
+      <button type="submit">Analyze Password Security</button>
+    </form>
+
+    <div class="requirements">
+      <h3>Security Requirements</h3>
+      <ul>
+        <li>✔ At least 8 characters long</li>
+        <li>✔ Contains uppercase letters</li>
+        <li>✔ Contains lowercase letters</li>
+        <li>✔ Contains numbers</li>
+        <li>✔ Contains special characters</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
