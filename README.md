@@ -26,3 +26,6 @@ password-strength-checker/
 
 ## 📸 Screenshots
 
+![Password Strength Checker UI](Output-1.png)
+
+![After Checking the Password UI](Output-2.png)
